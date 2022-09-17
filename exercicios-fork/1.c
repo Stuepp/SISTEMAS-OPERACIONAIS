@@ -6,14 +6,19 @@
 
 int main(void){
   pid_t f, w;
-  int status;
+  int status = 0;
 
   printf("Processo principal (PID=%u)\n", getpid());
   f = fork();
   if(f == 0){
     //do something
+    sleep(1);
+    printf("%i\n", status);
+    status++;
+    exit(0);
   } else {
-    //do another something
+    //do another 
+    printf("A\n");
   }
   return 0;
 }
