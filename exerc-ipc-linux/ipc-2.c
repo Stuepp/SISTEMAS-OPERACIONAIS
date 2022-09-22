@@ -17,14 +17,16 @@ void X(){
 
 void Y(){
     pthread_mutex_lock(&mutex);
-    pthread_cond_wait(&cond2, &mutex);
+    while(n!=56)
+        pthread_cond_wait(&cond2, &mutex);
     n = n / 7;
     pthread_mutex_unlock(&mutex);
 }
 
 void Z(){
     pthread_mutex_lock(&mutex);
-    pthread_cond_wait(&cond1, &mutex);
+    while(n!=16)
+        pthread_cond_wait(&cond1, &mutex);
     n = n + 40;
     pthread_cond_signal(&cond2);
     pthread_mutex_unlock(&mutex);
