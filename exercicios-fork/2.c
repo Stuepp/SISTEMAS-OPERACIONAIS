@@ -4,7 +4,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int main(void){
+int main(void){ // olhar zap F312 -> foto do quadro contém resposta
   pid_t f1, f2;
 
   f1 = fork();

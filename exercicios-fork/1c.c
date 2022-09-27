@@ -6,25 +6,21 @@
 
 int main(void){
   pid_t f, f2, f3, f4;
-
-  printf("Processo principal (PID=%u)\n", getpid());
+  
+  //printf("Processor principal (PID=%u)\n", getpid());
+  printf("A\n");
   f = fork();
-  if(f == 0){//2º
+  if(f == 0){//filho de 1º
     printf("B-");
-    f3 =  fork();
-    if(f3 == 0){//4º
+  }
+  f2 = fork();
+  if(f2 == 0){
+    printf("C\n");
+    f3 = fork();
+    if(f3 == 0)
       printf("D-");
-      f4 = fork();
-      if(f4 == 0){
-        printf("\ndone\n");
-      }else{
-        printf("E");
-      }
-    }else{//3º
-      printf("-C\n");
-    }
-  }else {// 1º
-    printf("A\n");
-    waitpid(f, NULL, 0);
+    f4 = fork();
+    if(f4 == 0)
+      printf("E\n");
   }
 }
