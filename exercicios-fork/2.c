@@ -23,3 +23,10 @@ int main(void){ // olhar zap F312 -> foto do quadro contém resposta
   }
   return 0;
 }
+
+// RZ -> SQ -> FP 1
+// RZ -> FP -> SQ 2
+// SQ -> RZ -> FP 3
+// SQ -> FP -> RZ 4
+// FP -> RZ -> SQ 5
+// FP -> SQ -> RZ 6
